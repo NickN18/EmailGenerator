@@ -5,7 +5,7 @@ public class emailMain
     private String firstName, lastName;
     private String password;
     private String departmentCode;
-    private int mailBoxCapacity;
+    private int mailBoxCapacity, defaultPasswordLength;
     private String altEmail;
 
     public emailMain(String firstName, String lastName)
@@ -16,6 +16,9 @@ public class emailMain
         System.out.println("Email generated: " + firstName + "." + lastName + "@xeron.com");
 
         this.departmentCode = getDepartmentCode();
+
+        this.password = randomPassword(defaultPasswordLength);
+        System.out.println("A randomly generated password has been assigned to this account: " + this.password);
     }
 
     private String getDepartmentCode()
