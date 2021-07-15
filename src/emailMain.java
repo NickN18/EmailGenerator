@@ -5,7 +5,8 @@ public class emailMain
     private String firstName, lastName;
     private String password;
     private String departmentCode;
-    private int mailBoxCapacity, defaultPasswordLength;
+    private int mailBoxCapacity;
+    private int defaultPasswordLength = 10;
     private String altEmail;
 
     public emailMain(String firstName, String lastName)
@@ -20,6 +21,7 @@ public class emailMain
         this.password = randomPassword(defaultPasswordLength);
         System.out.println("A randomly generated password has been assigned to this account: " + this.password);
     }
+
 
     private String getDepartmentCode()
     {
@@ -44,7 +46,7 @@ public class emailMain
 
         for(int i = 0; i < length; i++)
         {
-            int rand = (int) (Math.random() + passwordSet.length());
+            int rand = (int) (Math.random() * passwordSet.length());
             password[i] = passwordSet.charAt(rand);
         }
 
