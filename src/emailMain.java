@@ -14,9 +14,12 @@ public class emailMain
         this.firstName = firstName;
         this.lastName = lastName;
 
-        System.out.println("Email generated: " + firstName + "." + lastName + "@xeron.com");
+        System.out.println("Email generated: " + firstName + "." + lastName);
 
         this.departmentCode = getDepartmentCode();
+
+        altEmail = firstName.toLowerCase() + "." + lastName.toLowerCase() + "@" + departmentCode + "-xeron.com";
+        System.out.println("Email generated: " + altEmail);
 
         this.password = randomPassword(defaultPasswordLength);
         System.out.println("A randomly generated password has been assigned to this account: " + this.password);
